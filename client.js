@@ -9,8 +9,14 @@ const connect = function () {
 
   conn.on("connect", () => {
     console.log("Connection established");
-    conn.write("Name: TCP");
+    conn.write("Name: TCP");    
   })
+  conn.on("connect", () => {
+    let up = "Move: up";
+    setInterval(function() {
+      conn.write(up)}, 1000);
+  })
+  
   conn.on("data", (data) => {
     console.log(data);
   })
