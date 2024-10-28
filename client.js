@@ -7,6 +7,10 @@ const connect = function () {
     port: 50541
   });
 
+  conn.on("connect", () => {
+    console.log("Connection established");
+    conn.write("Name: TCP");
+  })
   conn.on("data", (data) => {
     console.log(data);
   })
