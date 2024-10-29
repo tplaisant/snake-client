@@ -11,13 +11,14 @@ const connect = function () {
     console.log("Connection established");
     conn.write("Name: TCP");    
   })
-  conn.on("connect", () => {
-    let up = "Move: up";
-    setInterval(function() {
-      conn.write(up)}, 1000);
-  })
+  // conn.on("connect", () => {
+  //   let up = "Move: up";
+  //   setInterval(function() {
+  //     conn.write(up)}, 1000);
+  // })
   
   conn.on("data", (data) => {
+    // console.log('aqui');
     console.log(data);
   })
 
